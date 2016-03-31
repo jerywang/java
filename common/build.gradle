@@ -1,0 +1,51 @@
+apply plugin: 'idea'
+apply plugin: 'java'
+
+repositories {
+    maven { url 'http://cq01-sdc-ma14.vm.baidu.com:8081/nexus/content/groups/public/' }
+    maven { url 'http://maven.scm.baidu.com:8081/nexus/content/groups/public/' }
+    maven { url 'http://maven.scm.baidu.com:8081/nexus/content/repositories/Baidu_Local_Snapshots' }
+    maven { url 'http://maven.scm.baidu.com:8081/nexus/content/repositories/Baidu_Local' }
+    mavenLocal()
+}
+
+dependencies {
+    compile "org.projectlombok:lombok:1.12.2"
+    compile "org.springframework:spring-core:4.1.4.RELEASE"
+    compile "org.springframework:spring-beans:4.1.4.RELEASE"
+    compile "org.springframework:spring-context:4.1.4.RELEASE"
+    compile "org.springframework:spring-context-support:4.1.4.RELEASE"
+    compile "log4j:log4j:1.2.17"
+    compile "com.rabbitmq:amqp-client:3.5.4"
+    compile "com.google.guava:guava:14.0"
+    compile fileTree(dir:'lib',include:'*.jar')
+    testCompile "junit:junit:4.11"
+}
+
+version = 1.0
+
+jar {
+    manifest {
+        attributes 'Implementation-Title': name, 'Implementation-Version': version
+    }
+    from 'build/classes'
+    destinationDir = file('output')
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs=['src']
+        }
+    }
+}
+
+project('study') {
+    defaultTasks 'clean', 'jar', 'uploadArchives'
+}
+
+task zip(type: Zip, dependsOn: [jar]) {
+    destinationDir = file("output")
+}
+
+defaultTasks 'clean', 'jar', 'zip', 'uploadArchives'
