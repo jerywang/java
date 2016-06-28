@@ -5,6 +5,7 @@ package thread;
 
 /**
  * Created by wangguoxing on 15-11-16.
+ * 卖票例子
  */
 //class MyThread implements Runnable{
 //    private int tickets = 10;
@@ -33,6 +34,22 @@ class MyThread extends Thread{
             }
         }
     }
+
+    public static void main(String[] args) throws Exception
+    {
+//        MyThread mt1 = new MyThread();
+//        MyThread mt2 = new MyThread();
+//        MyThread mt3 = new MyThread();
+//        mt1.start();//每个线程都各卖了10张，共卖了30张票
+//        mt2.start();//但实际只有10张票，每个线程都卖自己的票
+//        mt3.start();//没有达到资源共享
+
+        //同一个mt，但是在Thread中就不可以，如果用同一个实例化对象mt，就会出现异常
+        MyThread mt = new MyThread();
+        new Thread(mt).start();
+        new Thread(mt).start();
+    }
+
 }
 /*
 从结果上看每个票号都被打印了四次，即四个线程各自卖各自的100张票，而不去卖共同的100张票。

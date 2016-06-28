@@ -13,6 +13,8 @@ import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 
 /**
  * $Id ThreadPoolTaskExecutorTest.java 2016-05-27 11:00 wangguoxing@baidu.com $
+ *
+ * Description: 多线程闭锁的使用 @see java并发编程实战 5.5.1 page 93
  */
 public class ThreadPoolTaskExecutorTest implements Callable<String> {
 
@@ -45,14 +47,16 @@ public class ThreadPoolTaskExecutorTest implements Callable<String> {
         for (int k = 0; k < workerNum; k++) {
             results.add(taskExecutor.submit(new ThreadPoolTaskExecutorTest("name" + k, 3000L, latch)));
         }
-        if(latch.await(10000, TimeUnit.MILLISECONDS)) {
+        if (latch.await(10000, TimeUnit.MILLISECONDS)) {
             System.out.println("all the threads end!");
         } else {
             System.out.println("time out!");
         }
         taskExecutor.shutdown();
         for (Future future : results) {
-            System.out.println(future.get());
+//            if (future.isDone()) {
+                System.out.println(future.get());
+//            }
         }
     }
 
@@ -70,3 +74,4 @@ public class ThreadPoolTaskExecutorTest implements Callable<String> {
 
         return poolTaskExecutor;
     }
+}

@@ -6,12 +6,11 @@ package test.demo;
 /**
  * Created by wangguoxing on 15-10-28.
  */
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-
-
 
 class NewsManager {
 
@@ -20,40 +19,36 @@ class NewsManager {
      */
     public static void main(String[] args) {
 
-        List newss=getNewsList();
+        List newss = getNewsList();
 
-        for(int i=0;i<newss.size();i++)
-        {
-            News news=(News)newss.get(i);
+        for (int i = 0; i < newss.size(); i++) {
+            News news = (News) newss.get(i);
 
-            System.out.println("hits:"+news.getHits());
+            System.out.println("hits:" + news.getHits());
 
         }
 
     }
 
+    public static List getNewsList() {
 
-    public static List getNewsList()
-    {
+        List<News> list = new ArrayList();
 
-        List<News> list=new ArrayList();
-
-        News news1=new News();
+        News news1 = new News();
         news1.setHits(1);
         list.add(news1);
 
-        News news2=new News();
+        News news2 = new News();
         news2.setHits(7);
         list.add(news2);
 
-        News news3=new News();
+        News news3 = new News();
         news3.setHits(3);
         list.add(news3);
 
-        News news4=new News();
+        News news4 = new News();
         news4.setHits(5);
         list.add(news4);
-
 
         // 按点击数倒序
         Collections.sort(list, new Comparator<News>() {
@@ -73,12 +68,11 @@ class NewsManager {
         return list;
     }
 
-
-
 }
 
 class News {
     private int hits;
+
     public void setHits(int i) {
         this.hits = i;
     }
