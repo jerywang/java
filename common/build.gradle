@@ -53,7 +53,7 @@ sourceSets {
     }
 }
 
-project('common') {
+project('src') {
     defaultTasks 'clean', 'jar', 'uploadArchives'
 }
 
