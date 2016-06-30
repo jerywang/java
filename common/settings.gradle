@@ -1,3 +1,4 @@
 rootProject.name = "common"
 
-include "src"
+include "common-base"
+include "common-src"
