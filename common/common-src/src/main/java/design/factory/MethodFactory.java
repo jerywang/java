@@ -8,19 +8,8 @@ package design.factory;
  *
  * 工厂方法模式
  */
-public class MethodFactory {
+public interface MethodFactory {
 
-    private MethodFactory() {}
-
-    @SuppressWarnings("unchecked")
-    public static <T extends ProductA> T factory(Class<T> c) {
-        try {
-            ProductA product = (ProductA) Class.forName(c.getName()).newInstance();
-            return (T) product;
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
+    public <T extends ProductA> T factory(Class<T> c);
 
 }

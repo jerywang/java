@@ -23,14 +23,18 @@ import design.factory.impl.ProductAImpl;
 public class FactoryTest {
 
     @Autowired
+    public MethodFactory methodFactory;
+
+    @Autowired
     public AbstractFactory abstractFactory;
 
     @Test
     public void testFactory() {
         // 工厂方法
-        ProductA productA = MethodFactory.factory(ProductAImpl.class);
+        ProductA productA = methodFactory.factory(ProductAImpl.class);
         // 抽象工厂
         ProductB productB = abstractFactory.newProductB();
+        System.out.println();
         System.out.println(productA);
         System.out.println(productB);
     }

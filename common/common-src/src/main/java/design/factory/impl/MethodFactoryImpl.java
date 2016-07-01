@@ -3,6 +3,9 @@
  */
 package design.factory.impl;
 
+import org.springframework.stereotype.Component;
+
+import design.factory.MethodFactory;
 import design.factory.ProductA;
 
 /**
@@ -10,12 +13,13 @@ import design.factory.ProductA;
  *
  * 工厂方法模式
  */
-public class MethodFactoryImpl {
+@Component
+public class MethodFactoryImpl implements MethodFactory {
 
     private MethodFactoryImpl() {}
 
     @SuppressWarnings("unchecked")
-    public static <T extends ProductA> T factory(Class<T> c) {
+    public <T extends ProductA> T factory(Class<T> c) {
         try {
             ProductA product = (ProductA) Class.forName(c.getName()).newInstance();
             return (T) product;
@@ -25,8 +29,4 @@ public class MethodFactoryImpl {
         return null;
     }
 
-    public static void main(String[] args) {
-        ProductA product = MethodFactoryImpl.factory(ProductAImpl.class);
-        System.out.println(product);
-    }
 }
