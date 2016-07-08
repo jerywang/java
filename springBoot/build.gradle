@@ -1,0 +1,42 @@
+group 'com.baidu'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'spring-boot'
+
+sourceCompatibility = 1.5
+
+buildscript {
+    repositories {
+        maven { url 'http://maven.scm.baidu.com:8081/nexus/content/repositories/Baidu_Local_Snapshots' }
+        maven { url 'http://maven.scm.baidu.com:8081/nexus/content/groups/public/' }
+        maven { url 'http://maven.scm.baidu.com:8081/nexus/content/repositories/Baidu_Local' }
+        mavenLocal()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.1.10.RELEASE")
+    }
+}
+
+jar {
+    baseName = 'springBoot'
+    version =  '0.1.0'
+}
+
+repositories {
+    maven { url 'http://maven.scm.baidu.com:8081/nexus/content/repositories/Baidu_Local_Snapshots' }
+    maven { url 'http://maven.scm.baidu.com:8081/nexus/content/groups/public/' }
+    maven { url 'http://maven.scm.baidu.com:8081/nexus/content/repositories/Baidu_Local' }
+    mavenLocal()
+}
+
+dependencies {
+    compile "org.projectlombok:lombok:1.12.2"
+    compile("org.springframework.boot:spring-boot-starter-web")
+    testCompile("junit:junit")
+}
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.2.1'
+}
