@@ -56,6 +56,7 @@ public class ThreadPoolTaskExecutorTest implements Callable<String> {
         for (Future future : results) {
 //            if (future.isDone()) {
                 System.out.println(future.get());
+            //future.get(3L, TimeUnit.SECONDS);//timeOut
 //            }
         }
     }
