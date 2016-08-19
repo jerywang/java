@@ -13,6 +13,8 @@ import java.util.concurrent.FutureTask;
 
 /**
  * $Id Memoryer.java 2016-06-28 17:58 wangguoxing@baidu.com $
+ *
+ * 缓存实现, 且并发场景中不会出现同一缓存被重复计算
  */
 public class Memoryer<A, V> implements Computable<A, V> {
 
@@ -24,6 +26,7 @@ public class Memoryer<A, V> implements Computable<A, V> {
         this.c = c;
     }
 
+    @Override
     public V compute(final A arg) throws InterruptedException {
         while (true) {
             Future<V> future = cache.get(arg);
@@ -35,7 +38,9 @@ public class Memoryer<A, V> implements Computable<A, V> {
                     }
                 };
                 FutureTask<V> futureTask = new FutureTask<V>(eval);
+                // 保证了原子操作
                 future = cache.putIfAbsent(arg, futureTask);
+                // 如果第一次被设置,则运行计算任务,保证了不会重复计算
                 if (future == null) {
                     future = futureTask;
                     futureTask.run();
