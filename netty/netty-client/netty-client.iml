@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id=":netty-client" external.linked.project.path="$MODULE_DIR$/../netty-client"
+external.root.project.path="$MODULE_DIR$/.." external.system.id="GRADLE" external.system.module.group="com.baidu.netty"
+external.system.module.version="1.0" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="false">
+    <output url="file://$MODULE_DIR$/../netty-client/build/classes/main" />
+    <output-test url="file://$MODULE_DIR$/../netty-client/build/classes/test" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../netty-client/src/main/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/configure" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../netty-client/src/test/resources" type="java-test-resource" />
+      <excludeFolder url="file://$MODULE_DIR$/../netty-client/.gradle" />
+      <excludeFolder url="file://$MODULE_DIR$/../netty-client/build" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" exported="" name="Gradle: org.projectlombok:lombok:1.12.2" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.springframework:spring-core:4.1.4.RELEASE" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.springframework:spring-beans:4.1.4.RELEASE" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.springframework:spring-context:4.1.4.RELEASE" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.springframework:spring-context-support:4.1.4.RELEASE" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.springframework:spring-expression:4.1.4.RELEASE" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.springframework:spring-aop:4.1.4.RELEASE" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.springframework:spring-tx:4.1.4.RELEASE" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.springframework:spring-aspects:4.1.4.RELEASE" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.springframework:spring-jdbc:4.1.4.RELEASE" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: log4j:log4j:1.2.17" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: commons-lang:commons-lang:2.6" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: commons-io:commons-io:2.4" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: commons-dbcp:commons-dbcp:1.4" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: commons-beanutils:commons-beanutils:1.8.3" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: commons-collections:commons-collections:3.2.1" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: commons-pool:commons-pool:1.6" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: mysql:mysql-connector-java:5.1.16" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: javax.persistence:persistence-api:1.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: javax.servlet:servlet-api:2.5" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.apache.httpcomponents:httpclient:4.3.6" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.apache.httpcomponents:httpclient-cache:4.3.6" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.apache.httpcomponents:fluent-hc:4.3.6" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.jsoup:jsoup:1.7.3" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.fasterxml.jackson.core:jackson-databind:2.5.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.fasterxml.jackson.core:jackson-annotations:2.5.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.5.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.fasterxml.jackson.datatype:jackson-datatype-guava:2.5.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.codehaus.woodstox:woodstox-core-asl:4.4.1" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.hibernate:hibernate-entitymanager:4.3.7.Final" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.hibernate:hibernate-core:4.3.7.Final" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.hibernate:hibernate-validator:5.1.3.Final" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: net.sf.ehcache:ehcache:2.8.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.aspectj:aspectjtools:1.7.4" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.aspectj:aspectjrt:1.6.11" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.mybatis:mybatis:3.2.4" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.mybatis:mybatis-spring:1.2.2" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.baidu.bigpipe:bigpipe4j:1.3.3.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: net.sf.json-lib:json-lib:2.4:jdk15" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: commons-logging:commons-logging:1.2" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: aopalliance:aopalliance:1.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.apache.httpcomponents:httpcore:4.3.3" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.fasterxml.jackson.module:jackson-module-jaxb-annotations:2.5.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.codehaus.woodstox:stax2-api:3.1.4" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: javax.xml.stream:stax-api:1.0-2" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.jboss.logging:jboss-logging:3.1.3.GA" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.jboss.logging:jboss-logging-annotations:1.2.0.Beta1" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: dom4j:dom4j:1.6.1" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.hibernate.common:hibernate-commons-annotations:4.0.5.Final" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.jboss.spec.javax.transaction:jboss-transaction-api_1.2_spec:1.0.0.Final" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.javassist:javassist:3.18.1-GA" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: antlr:antlr:2.7.7" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.jboss:jandex:1.1.0.Final" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.fasterxml:classmate:1.0.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.google.protobuf:protobuf-java:2.5.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.apache.zookeeper:zookeeper:3.3.3" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.google.code.gson:gson:2.2.4" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: net.sf.ezmorph:ezmorph:1.0.6" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: jline:jline:0.9.94" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.aspectj:aspectjweaver:1.8.4" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: javax.validation:validation-api:1.1.0.Final" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: mcpack-j:mcpack-j:1.0.6.2" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.springframework:spring-test:4.1.4.RELEASE" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.jmock:jmock-junit4:2.6.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: junit:junit:4.11" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.dbunit:dbunit:2.4.9" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.jmock:jmock:2.6.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: junit:junit-dep:4.4" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.hamcrest:hamcrest-core:1.3" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.hamcrest:hamcrest-library:1.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: net.sourceforge.cobertura:cobertura:1.9.4" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: asm:asm:3.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: asm:asm-tree:3.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.apache.ant:ant:1.7.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.apache.ant:ant-launcher:1.7.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: commons-codec:commons-codec:1.8" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.baidu.rigel:tcom-log:1.0.0.9" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: commons-configuration:commons-configuration:1.6" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: commons-httpclient:commons-httpclient:3.1" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: freemarker:freemarker:2.3.8" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.hibernate:hibernate:3.2.7.ga" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.jasypt:jasypt:1.6" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.google:jsonplugin:0.30" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: javax.annotation:jsr250-api:1.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.apache.struts:struts2-convention-plugin:2.2.1" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.baidu.rigel.tmp:struts2-core:2.2.1.1.1" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.ostermiller:utils:1.07.00" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: commons-net:commons-net:2.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.hibernate:hibernate-annotations:3.4.0.GA" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.baidu.rigel.tmp:mcpack:1.0.1" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.baidu.rigel.tmp:json-rpc:1.1.2" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.baidu.rigel.tmp:wireformat:1.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.baidu.rigel:security-client:1.0.0.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.springmodules:spring-modules-cache:0.8" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: net.spy:memcached:2.1" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.caucho:hessian:3.2.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: net.spy:spy:2.4" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.baidu.rigel.tmp:thrift:0.7.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.apache.struts.xwork:xwork-core:2.2.1.1" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: oro:oro:2.0.8" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.apache.velocity:velocity:1.6.3" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: c3p0:c3p0:0.9.1.2" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: redis.clients:jedis:2.0.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: velocity-tools:velocity-tools:1.4" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: jboss:javassist:3.8.0.GA" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.baidu:mcpack-j:1.0.0.9" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.baidu.rigel:tcom-message:1.0.0.8" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: commons-digester:commons-digester:1.8" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: commons-beanutils:commons-beanutils-core:1.8.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: javax.transaction:jta:1.0.1B" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: asm:asm-attrs:1.5.3" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: cglib:cglib:2.1_3" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: asm:asm:1.5.3" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.hibernate:ejb3-persistence:1.0.2.GA" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.hibernate:hibernate-commons-annotations:3.1.0.GA" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: ognl:ognl:3.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: javax.activation:activation:1.1" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: javax.mail:mail:1.4.1" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.baidu.rigel:tcom-base:1.0.0.8.1" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.ibm.icu:icu4j:49.1" level="project" />
+    <orderEntry type="module" module-name="netty-base" exported="" />
+    <orderEntry type="library" exported="" name="Gradle: com.baidu:configcenter-bjf:1.0.5.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.baidu:bjf:1.0.4.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.baidu:cc-interface:1.0.0.2" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.baidu:bjf-management:1.0.4.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.baidu:bjf-tcom-compatible:1.0.4.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: junit:junit:3.8.1" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.alibaba:fastjson:1.2.6" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.slf4j:slf4j-log4j12:1.7.10" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.slf4j:slf4j-api:1.7.10" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.baidu.noah.naming:naming-sdk-java:1.0.7.5" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.elasticsearch:elasticsearch:2.3.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.apache.lucene:lucene-core:5.5.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.apache.lucene:lucene-backward-codecs:5.5.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.apache.lucene:lucene-analyzers-common:5.5.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.apache.lucene:lucene-queries:5.5.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.apache.lucene:lucene-memory:5.5.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.apache.lucene:lucene-highlighter:5.5.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.apache.lucene:lucene-queryparser:5.5.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.apache.lucene:lucene-suggest:5.5.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.apache.lucene:lucene-join:5.5.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.apache.lucene:lucene-spatial:5.5.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.elasticsearch:securesm:1.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.carrotsearch:hppc:0.7.1" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: joda-time:joda-time:2.8.2" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.joda:joda-convert:1.2" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.fasterxml.jackson.dataformat:jackson-dataformat-smile:2.6.2" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.6.2" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.fasterxml.jackson.dataformat:jackson-dataformat-cbor:2.6.2" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: io.netty:netty:3.10.5.Final" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.ning:compress-lzf:1.0.2" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.tdunning:t-digest:3.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.hdrhistogram:HdrHistogram:2.1.6" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: commons-cli:commons-cli:1.3.1" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.twitter:jsr166e:1.1.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.apache.lucene:lucene-sandbox:5.5.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.apache.lucene:lucene-misc:5.5.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.apache.lucene:lucene-grouping:5.5.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.apache.lucene:lucene-spatial3d:5.5.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.spatial4j:spatial4j:0.5" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.yaml:snakeyaml:1.15" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.google.guava:guava:18.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.fasterxml.jackson.core:jackson-core:2.6.2" level="project" />
+  </component>
+</module>

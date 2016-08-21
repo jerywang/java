@@ -1,0 +1,288 @@
+ext {
+    springVersion = "4.1.4.RELEASE"
+    springDataJpaVersion = "1.7.1.RELEASE"
+    springDataMongodbVersion = "1.6.2.RELEASE"
+    jacksonVersion = "2.5.0"
+    woodstoxVersion = "4.4.1"
+    hibernateVersion = "4.3.7.Final"
+    httpclientVersion = "4.3.6"
+    log4jVersion = "1.2.17"
+    slf4jVersion = "1.7.10"
+}
+
+subprojects {
+    apply plugin: 'eclipse'
+    apply plugin: 'idea'
+    apply plugin: 'java'
+    apply plugin: 'findbugs'
+    apply from: "${parent.projectDir.canonicalPath}/cobertura.gradle"
+
+    eclipse {
+        classpath {
+            downloadSources = true
+        }
+    }
+
+    tasks.withType(JavaCompile) { options.encoding = 'UTF-8' }
+    tasks.withType(Javadoc) { options.encoding = 'UTF-8' }
+
+    group = 'com.baidu.netty'
+
+    sourceCompatibility = 1.6
+    targetCompatibility = 1.6
+    version = '1.0'
+
+    buildscript {
+        repositories {
+            maven { url 'http://maven.scm.baidu.com:8081/nexus/content/repositories/Baidu_Local_Snapshots' }
+            maven { url 'http://maven.scm.baidu.com:8081/nexus/content/groups/public/' }
+            maven { url 'http://maven.scm.baidu.com:8081/nexus/content/repositories/Baidu_Local' }
+            mavenLocal()
+        }
+        configurations.all {
+            resolutionStrategy {
+                cacheDynamicVersionsFor 10, 'seconds'
+                cacheChangingModulesFor 0, 'seconds'
+            }
+        }
+    }
+
+    dependencies {
+        compile "org.projectlombok:lombok:1.12.2"
+        compile "org.springframework:spring-core:4.1.4.RELEASE"
+        compile "org.springframework:spring-beans:4.1.4.RELEASE"
+        compile "org.springframework:spring-context:4.1.4.RELEASE"
+        compile "org.springframework:spring-context-support:4.1.4.RELEASE"
+        compile "org.springframework:spring-expression:4.1.4.RELEASE"
+        compile "org.springframework:spring-aop:4.1.4.RELEASE"
+        compile "org.springframework:spring-tx:4.1.4.RELEASE"
+        compile "org.springframework:spring-aspects:4.1.4.RELEASE"
+        compile "org.springframework:spring-jdbc:4.1.4.RELEASE"
+        compile "org.springframework:spring-web:4.1.4.RELEASE"
+        compile "org.springframework:spring-webmvc:4.1.4.RELEASE"
+        compile "org.springframework:spring-oxm:4.1.4.RELEASE"
+
+        compile "log4j:log4j:1.2.17"
+        compile "org.slf4j:slf4j-log4j12:1.7.10"
+        compile "commons-lang:commons-lang:2.6"
+        compile 'commons-io:commons-io:2.4'
+        compile 'commons-dbcp:commons-dbcp:1.4'
+        compile 'commons-beanutils:commons-beanutils:1.8.3'
+        compile 'commons-collections:commons-collections:3.2.1'
+        compile 'commons-pool:commons-pool:1.6'
+        compile 'commons-codec:commons-codec:1.8'
+        compile 'mysql:mysql-connector-java:5.1.16'
+        compile 'javax.persistence:persistence-api:1.0'
+
+        compile "org.apache.httpcomponents:httpclient:4.3.6"
+        compile "org.apache.httpcomponents:httpclient-cache:4.3.6"
+        compile "org.apache.httpcomponents:fluent-hc:4.3.6"
+        compile "org.jsoup:jsoup:1.7.3"
+
+        compile 'javax.validation:validation-api:1.0.0.GA'
+        compile 'net.sf.ehcache:ehcache:2.8.0'
+
+        compile "org.aspectj:aspectjtools:1.7.4"
+        compile "org.aspectj:aspectjweaver:1.6.11"
+        compile "org.aspectj:aspectjrt:1.6.11"
+        compile "org.mybatis:mybatis:3.2.4"
+        compile "org.mybatis:mybatis-spring:1.2.2"
+        compile "net.sf.json-lib:json-lib:2.4:jdk15"
+        compile "com.alibaba:fastjson:1.2.6"
+        compile "io.netty:netty-all:4.0.9.Final"
+        compile "com.rabbitmq:amqp-client:3.5.7"
+        compile "com.dyuproject.protostuff:protostuff-core:1.0.8"
+        compile "com.dyuproject.protostuff:protostuff-runtime:1.0.8"
+        compile("org.apache.zookeeper:zookeeper:3.4.6") {
+            exclude group: "junit", module: "junit"
+        }
+        compile "org.apache.commons:commons-collections4:4.0"
+        compile "org.apache.commons:commons-pool2:2.3"
+        compile "org.objenesis:objenesis:2.1"
+        compile "cglib:cglib:3.1"
+
+        testCompile "org.springframework:spring-test:4.1.4.RELEASE"
+        testCompile "org.jmock:jmock-junit4:2.6.0"
+        testCompile "junit:junit:4.11"
+        testCompile "org.dbunit:dbunit:2.4.9"
+
+        compile fileTree(dir: libDir, include: '*.jar')
+    }
+
+
+    sourceSets {
+        main {
+            java {
+                srcDir 'src/main/java'
+            }
+            resources {
+                srcDir 'src/main/configure'
+            }
+        }
+        test {
+            java {
+                srcDir 'src/test/java'
+            }
+            resources {
+                srcDir 'src/main/configure'
+            }
+        }
+    }
+
+    repositories {
+        maven { url 'http://maven.scm.baidu.com:8081/nexus/content/groups/public/' }
+        maven { url 'http://maven.scm.baidu.com:8081/nexus/content/repositories/Baidu_Local_Snapshots' }
+        maven { url 'http://maven.scm.baidu.com:8081/nexus/content/repositories/Baidu_Local' }
+        mavenLocal()
+    }
+
+    dependencies {
+
+    }
+
+    jar {
+        manifest {
+            attributes 'Implementation-Title': name, 'Implementation-Version': version
+        }
+    }
+
+    findbugs {
+        toolVersion = "2.0.1"
+        sourceSets = [sourceSets.main]
+        ignoreFailures = true
+    }
+
+    task deleteConf(type: Delete) {
+        for (File f : file("src/main/configure").listFiles()) {
+            if (f.isFile()) {
+                delete f
+            }
+        }
+    }
+
+    afterEvaluate {
+//        task jacocoTestReport {
+//            group = "Reporting"
+//            description = "Generate Jacoco coverage reports after running tests."
+//            additionalSourceDirs = files(sourceSets.main.allJava.srcDirs)
+//        }
+        task copyDependProjects(type: Copy, dependsOn: [deleteConf]) {
+            def useConf = 'dev'
+            if (project.hasProperty('profile')) {
+                useConf = "${profile}"
+            }
+            for (entry in configurations.compile.getAllDependencies()) {
+                if (entry instanceof org.gradle.api.internal.artifacts.dependencies.DefaultProjectDependency) {
+                    from(entry.dependencyProject.file('src/main/conf/static'))
+                    into "src/main/configure"
+
+                    from(entry.dependencyProject.file("src/main/conf/${useConf}"))
+                    into "src/main/configure"
+                }
+            }
+        }
+
+        task copyConf(type: Copy, dependsOn: [deleteConf, copyDependProjects]) {
+            def useConf = 'dev'
+            if (project.hasProperty('profile')) {
+                useConf = "${profile}"
+            }
+
+            from "src/main/conf/${useConf}"
+            into "src/main/configure"
+            from "src/main/conf/static"
+            into "src/main/configure"
+        }
+
+        tasks.eclipse.dependsOn copyConf
+        tasks.jar.dependsOn copyConf
+
+        configure([project(':netty-server')]) {
+            tasks.war.dependsOn copyConf
+        }
+    }
+
+    tasks.clean.delete << outputDir
+
+    uploadArchives {
+        repositories {
+            mavenLocal()
+        }
+    }
+}
+
+project('netty-rpc') {
+    dependencies {
+
+    }
+    defaultTasks 'clean', 'uploadArchives'
+}
+
+project('netty-client') {
+    dependencies {
+        compile project(':netty-rpc')
+        compile project(':netty-server')
+    }
+    task zip(type: Zip, dependsOn: [jar]) {
+        destinationDir = file(outputDir)
+        into('resource') {
+            from('src/main/configure')
+        }
+
+        into('lib') {
+            from jar.archivePath
+            from configurations.runtime
+        }
+        from 'shell'
+    }
+    defaultTasks 'clean', 'zip', 'uploadArchives'
+}
+
+project('netty-server') {
+    apply plugin: 'war'
+    apply plugin: 'jetty'
+    dependencies {
+        compile project(':netty-rpc')
+        compile "org.springframework:spring-web:${springVersion}"
+        compile "org.springframework:spring-webmvc:${springVersion}"
+        compile "org.springframework:spring-oxm:${springVersion}"
+        providedCompile(
+                'javax.servlet:servlet-api:2.5' //作用域是编译时期
+        )
+    }
+
+    war {
+        def useConf = 'dev'
+        if (project.hasProperty('conf')) {
+            useConf = "${conf}"
+        }
+        destinationDir = file(outputDir)
+        webInf {
+            into('classes') {
+                from('src/main/WEB-INF/web.xml')
+            }
+        }
+        webInf {
+            into('classes') {
+                from('src/main/configure')
+            }
+        }
+    }
+
+    task zip(type: Zip, dependsOn: [jar]) {
+        destinationDir = file(outputDir)
+        into('resource') {
+            from('src/main/configure')
+        }
+
+        into('lib') {
+            from jar.archivePath
+            from configurations.runtime
+        }
+        from 'shell'
+    }
+
+    defaultTasks 'clean', 'zip', 'war', 'uploadArchives'
+}
+
+defaultTasks 'clean', 'jar', 'zip', 'war', 'uploadArchives'

@@ -1,0 +1,14 @@
+rpcServer注册host
+rpcServer注册服务列表
+
+<bean class="com.baidu.jprotobuf.pbrpc.spring.RpcServiceExporter">
+        <property name="servicePort" value="${rpc.server_port}"></property>
+        <property name="registerServices">
+            <list>
+                <ref bean="payApiService" />
+                <ref bean="refundApiService" />
+                <ref bean="transferApiService" />
+            </list>
+        </property>
+        <property name="connectTimeout" value="${rpc.server_timeout}"></property>
+    </bean>

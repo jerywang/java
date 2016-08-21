@@ -1,0 +1,6 @@
+rootProject.name = "netty"
+
+include "netty-rpc"
+include "netty-server"
+include "netty-client"
+
