@@ -14,9 +14,9 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 /**
- * $Id HttpApplication.java Aug 19,2016 wangguoxing@baidu.com $
+ * $Id SimpleServer.java Aug 19,2016 wangguoxing@baidu.com $
  */
-public class HttpApplication {
+public class SimpleServer {
     public static final String WEB_ROOT = "./";
     private static final int MAX_THREADS = 50;
     private static final ExecutorService service = Executors.newFixedThreadPool(MAX_THREADS);
@@ -32,6 +32,7 @@ public class HttpApplication {
                 }
             };
             service.execute(task);
+            service.shutdown();
         }
     }
 

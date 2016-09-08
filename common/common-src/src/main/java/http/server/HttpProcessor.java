@@ -39,7 +39,7 @@ public class HttpProcessor {
             // 加载对应的servlet类
             myClass = loader.loadClass("http.server."+servletName);
         } catch (ClassNotFoundException e) {
-            System.out.println(e.toString());
+            System.out.println("class not found exception: " + e.toString());
         }
 
         Servlet servlet = null;
@@ -47,12 +47,9 @@ public class HttpProcessor {
         try {
             // 生产servlet实例
             servlet = (Servlet) myClass.newInstance();
-            // 执行ervlet的service方法
             servlet.service(request, response);
         } catch (Exception e) {
-            System.out.println(e.toString());
-        } catch (Throwable e) {
-            System.out.println(e.toString());
+            System.out.println("execute servlet.service() failed: " + e.toString());
         }
     }
 }
