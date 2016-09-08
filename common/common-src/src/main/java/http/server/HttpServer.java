@@ -9,6 +9,9 @@ import java.io.OutputStream;
 import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ThreadFactory;
 
 /**
  * $Id HttpServer.java Aug 19,2016 wangguoxing@baidu.com $
@@ -16,59 +19,63 @@ import java.net.Socket;
 public class HttpServer {
     // 关闭服务命令
     private static final String SHUTDOWN_COMMAND = "/SHUTDOWN";
+    private static final int MAX_THREADS = 50;
+    private static final ExecutorService service = Executors.newFixedThreadPool(MAX_THREADS);
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         HttpServer server = new HttpServer();
         //等待连接请求
         server.await();
     }
 
-    public void await() {
-        ServerSocket serverSocket = null;
-        int port = 8080;
-        try {
-            //服务器套接字对象
-            serverSocket = new ServerSocket(port, 1, InetAddress.getByName("127.0.0.1"));
-        } catch (IOException e) {
-            e.printStackTrace();
-            System.exit(1);
-        }
+    private void await() throws Exception {
+        int port = 8081;
+        //服务器套接字对象
+        final ServerSocket serverSocket = new ServerSocket(port, 1, InetAddress.getByName("127.0.0.1"));
 
         // 循环等待请求
         while (true) {
-            Socket socket = null;
-            InputStream input = null;
-            OutputStream output = null;
             try {
-                //等待连接，连接成功后，返回一个Socket对象
-                socket = serverSocket.accept();
-                input = socket.getInputStream();
-                output = socket.getOutputStream();
+                Runnable task = new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            //等待连接，连接成功后，返回一个Socket对象
+                            final Socket socket = serverSocket.accept();
+                            InputStream input = socket.getInputStream();
+                            OutputStream output = socket.getOutputStream();
+                            // 创建Request对象并解析
+                            HttpRequest request = new HttpRequest(input);
+                            request.parse();
+                            // 检查是否是关闭服务命令
+                            //                        if (request.getUri().equals(SHUTDOWN_COMMAND)) {
+                            //                            break;
+                            //                        }
 
-                // 创建Request对象并解析
-                HttpRequest request = new HttpRequest(input);
-                request.parse();
-                // 检查是否是关闭服务命令
-                if (request.getUri().equals(SHUTDOWN_COMMAND)) {
-                    break;
-                }
+                            // 创建 Response 对象
+                            HttpResponse response = new HttpResponse(output);
+                            response.setRequest(request);
 
-                // 创建 Response 对象
-                HttpResponse response = new HttpResponse(output);
-                response.setRequest(request);
+                            if (request.getUri().startsWith("/servlet/")) {
+                                //请求uri以/servlet/开头，表示servlet请求
+                                HttpProcessor processor = new HttpProcessor();
+                                processor.process(request, response);
+                            } else {
+                                //静态资源请求
+                                StaticResourceProcessor processor = new StaticResourceProcessor();
+                                processor.process(request, response);
+                            }
 
-                if (request.getUri().startsWith("/servlet/")) {
-                    //请求uri以/servlet/开头，表示servlet请求
-                    HttpProcessor processor = new HttpProcessor();
-                    processor.process(request, response);
-                } else {
-                    //静态资源请求
-                    StaticResourceProcessor processor = new StaticResourceProcessor();
-                    processor.process(request, response);
-                }
+                            // 关闭 socket
+                            socket.close();
+                            System.out.println(Thread.currentThread());
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
 
-                // 关闭 socket
-                socket.close();
+                    }
+                };
+                service.execute(task);
 
             } catch (Exception e) {
                 e.printStackTrace();

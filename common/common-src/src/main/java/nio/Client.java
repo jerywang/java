@@ -11,12 +11,12 @@ import java.net.Socket;
 
 /**
  * Created by wangguoxing on 15-8-21.
+ *
  */
 public class Client {
-    static Socket server;
 
     public static void main(String[] args) throws Exception {
-        server = new Socket(InetAddress.getLocalHost(), 5678);
+        Socket server = new Socket(InetAddress.getLocalHost(), 5678);
         BufferedReader in = new BufferedReader(new InputStreamReader(server.getInputStream()));
         PrintWriter out = new PrintWriter(server.getOutputStream());
         BufferedReader wt = new BufferedReader(new InputStreamReader(System.in));

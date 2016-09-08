@@ -19,19 +19,18 @@ import java.util.concurrent.Executors;
 
 /**
  * Created by wangguoxing on 15-8-21.
+ *
  */
 public class Server {
     private static Charset charset = Charset.forName("utf-8");
-    private final int PORT = 5678;
+    private static final int PORT = 5678;
     private ExecutorService pool;
-    private ServerSocketChannel ssc;
     private Selector selector;
-    private int n;
 
-    public Server() throws IOException {
+    private Server() throws IOException {
         pool = Executors.newFixedThreadPool(5);
 
-        ssc = ServerSocketChannel.open();
+        ServerSocketChannel ssc = ServerSocketChannel.open();
         ssc.configureBlocking(false);
         ServerSocket ss = ssc.socket();
         ss.bind(new InetSocketAddress(PORT));
@@ -45,14 +44,15 @@ public class Server {
         server.doService();
     }
 
-    public void doService() {
+    private void doService() {
+        int selectKeys;
         while (true) {
             try {
-                n = selector.select();
+                selectKeys = selector.select();
             } catch (IOException e) {
                 throw new RuntimeException("Selector.select()异常!");
             }
-            if (n == 0) {
+            if (selectKeys == 0) {
                 continue;
             }
             Set<SelectionKey> keys = selector.selectedKeys();
@@ -65,15 +65,13 @@ public class Server {
                     try {
                         sc = ((ServerSocketChannel) key.channel()).accept();
                         sc.configureBlocking(false);
-                        System.out.println("客户端:" + sc.socket().getInetAddress().getHostAddress() + " 已连接");
+                        System.out.println("客户端:" + sc.socket().getInetAddress().getHostAddress() + key.toString() +" "
+                                + "已连接");
                         SelectionKey k = sc.register(selector, SelectionKey.OP_READ);
                         ByteBuffer buf = ByteBuffer.allocate(1024);
                         k.attach(buf);
                     } catch (Exception e) {
-                        try {
-                            sc.close();
-                        } catch (Exception ex) {
-                        }
+                        e.printStackTrace();
                     }
                 } else if (key.isReadable()) {
                     key.interestOps(key.interestOps() & (~SelectionKey.OP_READ));
@@ -83,10 +81,10 @@ public class Server {
         }
     }
 
-    public static class Worker implements Runnable {
+    private static class Worker implements Runnable {
         private SelectionKey key;
 
-        public Worker(SelectionKey key) {
+        private Worker(SelectionKey key) {
             this.key = key;
         }
 
@@ -99,21 +97,18 @@ public class Server {
             try {
                 while ((len = sc.read(buf)) > 0) {//非阻塞，立刻读取缓冲区可用字节
                     buf.flip();
-                    System.out.println("客户端：" + charset.decode(buf).toString());
+                    System.out.println("客户端 " + key.toString() + ":" +charset.decode(buf).toString());
                     buf.clear();
                 }
                 if (len == -1) {
-                    System.out.println("客户端断开。。。");
+                    System.out.println("客户端断开 " + key.toString());
                     sc.close();
                 }
                 //没有可用字节,继续监听OP_READ
                 key.interestOps(key.interestOps() | SelectionKey.OP_READ);
                 key.selector().wakeup();
             } catch (Exception e) {
-                try {
-                    sc.close();
-                } catch (IOException e1) {
-                }
+                e.printStackTrace();
             }
         }
     }
