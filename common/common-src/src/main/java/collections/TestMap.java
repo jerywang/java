@@ -3,6 +3,7 @@
  */
 package collections;
 
+import java.net.URL;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -19,6 +20,16 @@ import com.google.common.collect.Maps;
  */
 public class TestMap {
     public static void main(String[] args) {
+        URL[] urls=sun.misc.Launcher.getBootstrapClassPath().getURLs();
+        for (int i = 0; i < urls.length; i++) {
+            System.out.println(urls[i].toExternalForm());
+        }
+
+        ClassLoader extensionClassloader=ClassLoader.getSystemClassLoader().getParent();
+        System.out.println("the parent of extension classloader : "+extensionClassloader.getParent());
+        System.exit(0);
+
+
         HashMap<Integer, String> hashMap = Maps.newHashMap();
         TreeMap<Integer, String> treeMap = Maps.newTreeMap();
         LinkedHashMap<Integer, String> linkedHashMap = Maps.newLinkedHashMap();
