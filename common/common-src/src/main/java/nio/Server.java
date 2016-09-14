@@ -20,22 +20,28 @@ import java.util.concurrent.Executors;
 /**
  * Created by wangguoxing on 15-8-21.
  *
+ * TCP/IP的NIO非阻塞方式
  */
 public class Server {
     private static Charset charset = Charset.forName("utf-8");
     private static final int PORT = 5678;
-    private ExecutorService pool;
+    private ExecutorService pool = Executors.newFixedThreadPool(5);
+    //选择器，主要用来监控各个通道的事件, 本实例server端只有1个通道
     private Selector selector;
 
     private Server() throws IOException {
-        pool = Executors.newFixedThreadPool(5);
-
-        ServerSocketChannel ssc = ServerSocketChannel.open();
-        ssc.configureBlocking(false);
-        ServerSocket ss = ssc.socket();
-        ss.bind(new InetSocketAddress(PORT));
-        selector = Selector.open();
-        ssc.register(selector, SelectionKey.OP_ACCEPT);
+        //创建选择器
+        this.selector = Selector.open();
+        // 打开服务器通道
+        ServerSocketChannel serverSocketChannel = ServerSocketChannel.open();
+        // 服务器配置为非阻塞
+        serverSocketChannel.configureBlocking(false);
+        // 检索与此通道关联的服务器套接字
+        ServerSocket serverSocket = serverSocketChannel.socket();
+        // 进行服务的绑定
+        serverSocket.bind(new InetSocketAddress(PORT));
+        // 注册到selector，等待连接
+        serverSocketChannel.register(selector, SelectionKey.OP_ACCEPT);
         System.out.println("Server started...");
     }
 
@@ -44,30 +50,30 @@ public class Server {
         server.doService();
     }
 
-    private void doService() {
-        int selectKeys;
+    private void doService() throws IOException {
         while (true) {
-            try {
-                selectKeys = selector.select();
-            } catch (IOException e) {
-                throw new RuntimeException("Selector.select()异常!");
-            }
-            if (selectKeys == 0) {
+            int keysCount;
+            // 选择一组键，并且相应的通道已经打开
+            if (selector.select() == 0) {
                 continue;
             }
+            // 返回此选择器的已选择键集
             Set<SelectionKey> keys = selector.selectedKeys();
             Iterator<SelectionKey> iter = keys.iterator();
             while (iter.hasNext()) {
                 SelectionKey key = iter.next();
                 iter.remove();
                 if (key.isAcceptable()) {
-                    SocketChannel sc = null;
                     try {
-                        sc = ((ServerSocketChannel) key.channel()).accept();
-                        sc.configureBlocking(false);
-                        System.out.println("客户端:" + sc.socket().getInetAddress().getHostAddress() + key.toString() +" "
+                        // 接受到此通道套接字的连接。
+                        // 此方法返回的套接字通道（如果有）将处于阻塞模式。
+                        SocketChannel socketChannel = ((ServerSocketChannel) key.channel()).accept();
+                        // 配置为非阻塞
+                        socketChannel.configureBlocking(false);
+                        System.out.println("客户端:" + socketChannel.socket().getInetAddress().getHostAddress() + key.toString() + " "
                                 + "已连接");
-                        SelectionKey k = sc.register(selector, SelectionKey.OP_READ);
+                        // 注册到selector，等待连接
+                        SelectionKey k = socketChannel.register(selector, SelectionKey.OP_READ);
                         ByteBuffer buf = ByteBuffer.allocate(1024);
                         k.attach(buf);
                     } catch (Exception e) {
@@ -90,19 +96,22 @@ public class Server {
 
         @Override
         public void run() {
-            SocketChannel sc = (SocketChannel) key.channel();
+            // 返回为之创建此键的通道
+            SocketChannel socketChannel = (SocketChannel) key.channel();
             ByteBuffer buf = (ByteBuffer) key.attachment();
+            //将缓冲区清空以备下次读取
             buf.clear();
             int len = 0;
             try {
-                while ((len = sc.read(buf)) > 0) {//非阻塞，立刻读取缓冲区可用字节
+                //读取服务器发送来的数据到缓冲区中
+                while ((len = socketChannel.read(buf)) > 0) {//非阻塞，立刻读取缓冲区可用字节
                     buf.flip();
-                    System.out.println("客户端 " + key.toString() + ":" +charset.decode(buf).toString());
+                    System.out.println("客户端 " + key.toString() + ":" + charset.decode(buf).toString());
                     buf.clear();
                 }
                 if (len == -1) {
                     System.out.println("客户端断开 " + key.toString());
-                    sc.close();
+                    socketChannel.close();
                 }
                 //没有可用字节,继续监听OP_READ
                 key.interestOps(key.interestOps() | SelectionKey.OP_READ);
