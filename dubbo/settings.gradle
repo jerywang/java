@@ -1,0 +1,5 @@
+rootProject.name = "dubbo"
+
+include "dubbo-util"
+include "dubbo-server"
+include "dubbo-client"
