@@ -76,10 +76,18 @@ subprojects {
         compile "org.aspectj:aspectjrt:1.6.11"
         compile "org.mybatis:mybatis:3.2.4"
         compile "org.mybatis:mybatis-spring:1.2.2"
+
+        // dubbo conf
         compile "com.alibaba:fastjson:1.2.6"
+        compile "com.alibaba:dubbo:2.8.4"
+        compile "org.jboss.netty:netty:3.2.10.Final"
+        compile "com.github.sgroschupf:zkclient:0.1"
+
         compile "org.projectlombok:lombok:1.12.2"
         compile "com.rabbitmq:amqp-client:3.5.4"
         compile "com.google.guava:guava:14.0"
+
+        compile 'com.esotericsoftware:kryo:3.0.1'
 
         testCompile "org.springframework:spring-test:${springVersion}"
         testCompile "org.jmock:jmock-junit4:2.6.0"
@@ -94,6 +102,9 @@ subprojects {
         main {
             java {
                 srcDir 'src/main/java'
+            }
+            resources {
+                srcDir 'src/main/configure'
             }
         }
         test {
