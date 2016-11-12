@@ -17,6 +17,7 @@ public class ThreadInterrupted extends Thread {
             System.out.println("Going...");
         }
         System.out.println("Someone interrupted me.");
+        return; // 使用return停止线程
     }
 
     public void cancel() {
