@@ -4,7 +4,7 @@
 package design.facade;
 
 /**
- * $Id Computer.java Sep 12,2016 wangguoxing@baidu.com $
+ * $Id Computer.java Sep 12,2016 wangguoxing (554952580@qq.com) $
  *
  * Facade 类
  */

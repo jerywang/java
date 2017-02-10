@@ -6,7 +6,7 @@ package http.server;
 import java.io.IOException;
 
 /**
- * $Id StaticResourceProcessor.java Aug 19,2016 wangguoxing@baidu.com $
+ * $Id StaticResourceProcessor.java Aug 19,2016 wangguoxing (554952580@qq.com) $
  */
 public class StaticResourceProcessor {
     public void process(HttpRequest request, HttpResponse response) {

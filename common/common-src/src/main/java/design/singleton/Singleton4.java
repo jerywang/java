@@ -4,7 +4,7 @@
 package design.singleton;
 
 /**
- * $Id Singleton4.java 2016-07-01 14:02 wangguoxing@baidu.com $
+ * $Id Singleton4.java 2016-07-01 14:02 wangguoxing (554952580@qq.com) $
  *
  * 静态内部类机制
  */

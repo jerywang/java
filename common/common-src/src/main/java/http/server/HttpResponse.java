@@ -14,7 +14,7 @@ import javax.servlet.ServletOutputStream;
 import javax.servlet.ServletResponse;
 
 /**
- * $Id HttpResponse.java Aug 19,2016 wangguoxing@baidu.com $
+ * $Id HttpResponse.java Aug 19,2016 wangguoxing (554952580@qq.com) $
  */
 public class HttpResponse implements ServletResponse {
 

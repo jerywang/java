@@ -4,7 +4,7 @@
 package design.facade;
 
 /**
- * $Id Disk.java Sep 12,2016 wangguoxing@baidu.com $
+ * $Id Disk.java Sep 12,2016 wangguoxing (554952580@qq.com) $
  */
 public class Disk {
     public void startup(){

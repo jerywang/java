@@ -8,7 +8,7 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 
 /**
- * $Id LatchWork.java 2016-06-28 13:03 wangguoxing@baidu.com $
+ * $Id LatchWork.java 2016-06-28 13:03 wangguoxing (554952580@qq.com) $
  * <p/>
  * 多线程闭锁的使用 @see java并发编程实战 5.5.1 page 93
  * <p/>

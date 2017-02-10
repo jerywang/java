@@ -4,7 +4,7 @@
 package design.singleton;
 
 /**
- * $Id Singleton.java 2016-07-01 14:40 wangguoxing@baidu.com $
+ * $Id Singleton.java 2016-07-01 14:40 wangguoxing (554952580@qq.com) $
  *
  * Effective Java 2.3 使用枚举类型强化Singleton
  *

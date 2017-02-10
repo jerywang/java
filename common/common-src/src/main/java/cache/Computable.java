@@ -4,7 +4,7 @@
 package cache;
 
 /**
- * $Id Computable.java 2016-06-28 17:56 wangguoxing@baidu.com $
+ * $Id Computable.java 2016-06-28 17:56 wangguoxing (554952580@qq.com) $
  */
 public interface Computable<A, V> {
     /**

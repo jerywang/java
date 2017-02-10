@@ -7,7 +7,7 @@ import java.util.Comparator;
 import java.util.Queue;
 
 /**
- * $Id PriorityQueueTest.java Oct 20,2016 wangguoxing@baidu.com $
+ * $Id PriorityQueueTest.java Oct 20,2016 wangguoxing (554952580@qq.com) $
  *
  * 优先队列
  */

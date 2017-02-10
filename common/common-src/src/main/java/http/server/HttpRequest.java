@@ -15,7 +15,7 @@ import javax.servlet.ServletInputStream;
 import javax.servlet.ServletRequest;
 
 /**
- * $Id HttpRequest.java Aug 19,2016 wangguoxing@baidu.com $
+ * $Id HttpRequest.java Aug 19,2016 wangguoxing (554952580@qq.com) $
  */
 public class HttpRequest implements ServletRequest {
 

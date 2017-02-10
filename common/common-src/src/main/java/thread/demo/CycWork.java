@@ -8,7 +8,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 /**
- * $Id CycWork.java 2016-06-28 12:46 wangguoxing@baidu.com $
+ * $Id CycWork.java 2016-06-28 12:46 wangguoxing (554952580@qq.com) $
  * <p/>
  * Description: 多线程栅栏的使用 @see java并发编程实战 5.5.4 page 97
  * 接着上面的例子，还是这三个工人，不过这一次，这三个工人自由了，老板不用检查他们任务了，他们三个合作建桥，有三个桩，每人打一个

@@ -4,7 +4,7 @@
 package dubbo;
 
 /**
- * $Id DemoService.java Sep 19,2016 wangguoxing@baidu.com $
+ * $Id DemoService.java Sep 19,2016 wangguoxing (554952580@qq.com) $
  */
 public interface DemoService {
     String sayHello(String name);

@@ -4,7 +4,7 @@
 package design.observer;
 
 /**
- * $Id Observer.java Sep 13,2016 wangguoxing@baidu.com $
+ * $Id Observer.java Sep 13,2016 wangguoxing (554952580@qq.com) $
  */
 public interface Observer {
     public void update();

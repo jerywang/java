@@ -9,7 +9,7 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
- * $Id ConditionTest.java Oct 12,2016 wangguoxing@baidu.com $
+ * $Id ConditionTest.java Oct 12,2016 wangguoxing (554952580@qq.com) $
  */
 public class ConditionTest {
     private int queueSize = 10;

@@ -12,7 +12,7 @@ import java.util.TreeMap;
 import com.google.common.collect.Maps;
 
 /**
- * $Id TestMap.java Aug 18,2016 wangguoxing@baidu.com $
+ * $Id TestMap.java Aug 18,2016 wangguoxing (554952580@qq.com) $
  * <p/>
  * hashMap无序
  * TreeMap有序 - 实现原理 红黑树

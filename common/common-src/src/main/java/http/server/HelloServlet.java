@@ -13,7 +13,7 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 
 /**
- * $Id HelloServlet.java Aug 19,2016 wangguoxing@baidu.com $
+ * $Id HelloServlet.java Aug 19,2016 wangguoxing (554952580@qq.com) $
  */
 public class HelloServlet implements Servlet {
     public void init(ServletConfig config) {

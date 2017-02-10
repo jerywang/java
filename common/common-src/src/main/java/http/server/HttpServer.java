@@ -13,7 +13,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 /**
- * $Id HttpServer.java Aug 19,2016 wangguoxing@baidu.com $
+ * $Id HttpServer.java Aug 19,2016 wangguoxing (554952580@qq.com) $
  */
 public class HttpServer {
     private static final ExecutorService service = Executors.newFixedThreadPool(Constants.MAX_THREADS);

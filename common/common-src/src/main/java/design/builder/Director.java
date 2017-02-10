@@ -4,7 +4,7 @@
 package design.builder;
 
 /**
- * $Id Director.java Sep 12,2016 wangguoxing@baidu.com $
+ * $Id Director.java Sep 12,2016 wangguoxing (554952580@qq.com) $
  */
 public class Director {
     /**

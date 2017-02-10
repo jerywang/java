@@ -9,7 +9,7 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
- * $Id LockTest.java Aug 10,2016 wangguoxing@baidu.com $
+ * $Id LockTest.java Aug 10,2016 wangguoxing (554952580@qq.com) $
  */
 public class LockTest {
 

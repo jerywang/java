@@ -4,7 +4,7 @@
 package aop;
 
 /**
- * $Id UserManager.java Aug 11,2016 wangguoxing@baidu.com $
+ * $Id UserManager.java Aug 11,2016 wangguoxing (554952580@qq.com) $
  */
 public interface UserManager {
 

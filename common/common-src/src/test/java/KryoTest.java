@@ -19,7 +19,7 @@ import lombok.Data;
 import util.KryoUtil;
 
 /**
- * $Id KryoTest.java Oct 11,2016 wangguoxing@baidu.com $
+ * $Id KryoTest.java Oct 11,2016 wangguoxing (554952580@qq.com) $
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:applicationContext.xml"})

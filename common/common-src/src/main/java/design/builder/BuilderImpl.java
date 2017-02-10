@@ -4,7 +4,7 @@
 package design.builder;
 
 /**
- * $Id BuilderImpl.java Sep 12,2016 wangguoxing@baidu.com $
+ * $Id BuilderImpl.java Sep 12,2016 wangguoxing (554952580@qq.com) $
  */
 public class BuilderImpl implements Builder {
 

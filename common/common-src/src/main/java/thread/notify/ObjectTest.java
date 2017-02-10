@@ -6,7 +6,7 @@ package thread.notify;
 import java.util.PriorityQueue;
 
 /**
- * $Id ObjectTest.java Oct 12,2016 wangguoxing@baidu.com $
+ * $Id ObjectTest.java Oct 12,2016 wangguoxing (554952580@qq.com) $
  */
 public class ObjectTest {
     private int queueSize = 10;

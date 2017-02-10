@@ -4,7 +4,7 @@
 package aop;
 
 /**
- * $Id JDKProxyTest.java Aug 11,2016 wangguoxing@baidu.com $
+ * $Id JDKProxyTest.java Aug 11,2016 wangguoxing (554952580@qq.com) $
  */
 public class JDKProxyTest {
     public static void main(String[] args) {

@@ -4,7 +4,7 @@
 package http.server;
 
 /**
- * $Id HttpConnector.java Aug 19,2016 wangguoxing@baidu.com $
+ * $Id HttpConnector.java Aug 19,2016 wangguoxing (554952580@qq.com) $
  */
 public class HttpConnector {
 }

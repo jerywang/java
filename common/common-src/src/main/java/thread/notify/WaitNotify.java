@@ -4,7 +4,7 @@
 package thread.notify;
 
 /**
- * $Id WaitNotify.java Sep 28,2016 wangguoxing@baidu.com $
+ * $Id WaitNotify.java Sep 28,2016 wangguoxing (554952580@qq.com) $
  *
  * 在前面我们将了很多关于同步的问题，然而在现实中，需要线程之间的协作。
  * 比如说最经典的生产者-消费者模型：当队列满时，生产者需要等待队列有空间才能继续往里面放入商品，而在等待的期间内，

@@ -7,7 +7,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
- * $Id Provider.java Sep 19,2016 wangguoxing@baidu.com $
+ * $Id Provider.java Sep 19,2016 wangguoxing (554952580@qq.com) $
  */
 public class Provider {
     public static void main(String[] args) throws Exception {

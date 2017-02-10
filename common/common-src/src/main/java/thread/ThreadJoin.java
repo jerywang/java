@@ -4,7 +4,7 @@
 package thread;
 
 /**
- * $Id ThreadJoin.java Sep 28,2016 wangguoxing@baidu.com $
+ * $Id ThreadJoin.java Sep 28,2016 wangguoxing (554952580@qq.com) $
  */
 public class ThreadJoin {
     public static void main(String[] args) throws Exception {

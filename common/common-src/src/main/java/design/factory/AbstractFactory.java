@@ -4,7 +4,7 @@
 package design.factory;
 
 /**
- * $Id AbstractFactory.java 2016-07-01 15:14 wangguoxing@baidu.com $
+ * $Id AbstractFactory.java 2016-07-01 15:14 wangguoxing (554952580@qq.com) $
  *
  * 抽象工厂模式
  */

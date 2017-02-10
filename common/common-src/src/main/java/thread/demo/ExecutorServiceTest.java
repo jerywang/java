@@ -8,7 +8,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
 /**
- * $Id ExecutorServiceTest.java 2016-05-27 10:51 wangguoxing@baidu.com $
+ * $Id ExecutorServiceTest.java 2016-05-27 10:51 wangguoxing (554952580@qq.com) $
  */
 public class ExecutorServiceTest {
     public static void main(String[] args) throws Exception {

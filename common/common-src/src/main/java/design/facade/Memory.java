@@ -4,7 +4,7 @@
 package design.facade;
 
 /**
- * $Id Memory.java Sep 12,2016 wangguoxing@baidu.com $
+ * $Id Memory.java Sep 12,2016 wangguoxing (554952580@qq.com) $
  */
 public class Memory {
     public void startup(){

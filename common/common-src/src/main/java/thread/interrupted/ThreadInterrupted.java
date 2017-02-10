@@ -4,7 +4,7 @@
 package thread.interrupted;
 
 /**
- * $Id interrupted.java 2016-08-10 14:23 wangguoxing@baidu.com $
+ * $Id interrupted.java 2016-08-10 14:23 wangguoxing (554952580@qq.com) $
  */
 public class ThreadInterrupted extends Thread {
     public void run() {

@@ -8,7 +8,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * $Id AtomicTest.java Oct 25,2016 wangguoxing@baidu.com $
+ * $Id AtomicTest.java Oct 25,2016 wangguoxing (554952580@qq.com) $
  */
 public class AtomicTest {
     private AtomicInteger atomicInteger = new AtomicInteger(0);

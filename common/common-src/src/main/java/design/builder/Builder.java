@@ -4,7 +4,7 @@
 package design.builder;
 
 /**
- * $Id Builder.java Sep 12,2016 wangguoxing@baidu.com $
+ * $Id Builder.java Sep 12,2016 wangguoxing (554952580@qq.com) $
  */
 public interface Builder {
     public void buildPart1();

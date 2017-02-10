@@ -6,7 +6,7 @@ package design.singleton;
 import org.apache.http.annotation.ThreadSafe;
 
 /**
- * $Id Singleton1.java 2016-07-01 13:49 wangguoxing@baidu.com $
+ * $Id Singleton1.java 2016-07-01 13:49 wangguoxing (554952580@qq.com) $
  * <p/>
  * 同步延迟加载 - 懒汉模式
  */

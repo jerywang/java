@@ -4,7 +4,7 @@
 package cache;
 
 /**
- * $Id MemoryerTest.java 2016-06-28 18:10 wangguoxing@baidu.com $
+ * $Id MemoryerTest.java 2016-06-28 18:10 wangguoxing (554952580@qq.com) $
  */
 public class MemoryerTest  {
     private static final Computable<String, String> c = new Computable<String, String>() {

@@ -12,7 +12,7 @@ import java.util.concurrent.Future;
 import java.util.concurrent.FutureTask;
 
 /**
- * $Id Memoryer.java 2016-06-28 17:58 wangguoxing@baidu.com $
+ * $Id Memoryer.java 2016-06-28 17:58 wangguoxing (554952580@qq.com) $
  *
  * 缓存实现, 且并发场景中不会出现同一缓存被重复计算
  */

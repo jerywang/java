@@ -8,7 +8,7 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
 /**
- * $Id JDKProxy.java Aug 11,2016 wangguoxing@baidu.com $
+ * $Id JDKProxy.java Aug 11,2016 wangguoxing (554952580@qq.com) $
  */
 public class JDKProxy implements InvocationHandler {
 

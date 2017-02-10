@@ -13,7 +13,7 @@ import java.lang.reflect.Method;
 import com.sun.org.glassfish.gmbal.Description;
 
 /**
- * $Id Test.java Nov 30,2016 wangguoxing@baidu.com $
+ * $Id Test.java Nov 30,2016 wangguoxing (554952580@qq.com) $
  */
 @Description(key = "keys", value = "abc")
 public class Test {
@@ -25,7 +25,8 @@ public class Test {
         System.out.println(this.getClass().getName());
         System.out.println(this.getClass().getMethod("printName", String.class));
         for (Field field : this.getClass().getFields()) {
-            System.out.println(field.getName() + field.getType());
+            //System.out.println(field.getName() + field.getType());
+            System.out.println(field.get(this));
         }
         System.out.println(name);
         for (Annotation annotation : this.getClass().getAnnotations()) {

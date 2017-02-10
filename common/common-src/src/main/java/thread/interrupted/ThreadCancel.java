@@ -9,7 +9,7 @@ import java.util.List;
 import com.google.common.collect.Lists;
 
 /**
- * $Id ThreadCancel.java 2016-07-26 16:16 wangguoxing@baidu.com $
+ * $Id ThreadCancel.java 2016-07-26 16:16 wangguoxing (554952580@qq.com) $
  *
  * 到目前为止一切顺利!但是，当线程等待某些事件发生而被阻塞，又会发生什么？当然，如果线程被阻塞，它便不能核查共享变量，也就不能停止。
  * 这在许多情况下会发生，例如调用Object.wait()、ServerSocket.accept()和DatagramSocket.receive()时

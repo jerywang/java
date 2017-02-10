@@ -12,7 +12,7 @@ import java.net.URLStreamHandler;
 import javax.servlet.Servlet;
 
 /**
- * $Id HttpProcessor.java Aug 19,2016 wangguoxing@baidu.com $
+ * $Id HttpProcessor.java Aug 19,2016 wangguoxing (554952580@qq.com) $
  */
 public class HttpProcessor {
 

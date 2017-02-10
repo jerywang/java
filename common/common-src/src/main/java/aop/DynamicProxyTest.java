@@ -8,7 +8,7 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
 /**
- * $Id DynamicProxyTest.java Sep 28,2016 wangguoxing@baidu.com $
+ * $Id DynamicProxyTest.java Sep 28,2016 wangguoxing (554952580@qq.com) $
  */
 public class DynamicProxyTest {
     static interface IHello {

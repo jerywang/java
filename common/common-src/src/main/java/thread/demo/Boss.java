@@ -8,7 +8,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 /**
- * $Id Boss.java 2016-06-28 13:05 wangguoxing@baidu.com $
+ * $Id Boss.java 2016-06-28 13:05 wangguoxing (554952580@qq.com) $
  */
 public class Boss implements Runnable {
 

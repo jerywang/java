@@ -8,7 +8,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import lombok.extern.log4j.Log4j;
 
 /**
- * $Id Consumer.java Sep 19,2016 wangguoxing@baidu.com $
+ * $Id Consumer.java Sep 19,2016 wangguoxing (554952580@qq.com) $
  */
 @Log4j
 public class Consumer {

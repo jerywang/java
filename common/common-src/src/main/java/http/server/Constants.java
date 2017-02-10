@@ -4,7 +4,7 @@
 package http.server;
 
 /**
- * $Id Constants.java Aug 19,2016 wangguoxing@baidu.com $
+ * $Id Constants.java Aug 19,2016 wangguoxing (554952580@qq.com) $
  */
 public class Constants {
     // 关闭服务命令

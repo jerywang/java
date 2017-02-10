@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 
 /**
- * $Id ThreadPoolTaskExecutorTest.java 2016-05-27 11:00 wangguoxing@baidu.com $
+ * $Id ThreadPoolTaskExecutorTest.java 2016-05-27 11:00 wangguoxing (554952580@qq.com) $
  *
  * Description: 多线程闭锁的使用 @see java并发编程实战 5.5.1 page 93
  */

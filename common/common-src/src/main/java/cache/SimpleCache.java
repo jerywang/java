@@ -10,7 +10,7 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
- * $Id SimpleCache.java 2016-06-29 11:31 wangguoxing@baidu.com $
+ * $Id SimpleCache.java 2016-06-29 11:31 wangguoxing (554952580@qq.com) $
  */
 public final class SimpleCache<K, V> {
 

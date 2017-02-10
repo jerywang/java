@@ -9,7 +9,7 @@ import design.factory.MethodFactory;
 import design.factory.ProductA;
 
 /**
- * $Id MethodFactory.java 2016-07-01 14:59 wangguoxing@baidu.com $
+ * $Id MethodFactory.java 2016-07-01 14:59 wangguoxing (554952580@qq.com) $
  *
  * 工厂方法模式
  */

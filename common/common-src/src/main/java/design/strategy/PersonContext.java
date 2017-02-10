@@ -4,7 +4,7 @@
 package design.strategy;
 
 /**
- * $Id PersonContext.java Sep 13,2016 wangguoxing@baidu.com $
+ * $Id PersonContext.java Sep 13,2016 wangguoxing (554952580@qq.com) $
  */
 public class PersonContext {
     private TravelStrategy strategy = null;

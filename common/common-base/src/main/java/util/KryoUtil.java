@@ -22,7 +22,7 @@ import com.google.common.collect.Lists;
 import lombok.extern.log4j.Log4j;
 
 /**
- * $Id KryoUtil.java Oct 11,2016 wangguoxing@baidu.com $
+ * $Id KryoUtil.java Oct 11,2016 wangguoxing (554952580@qq.com) $
  */
 @Log4j
 public class KryoUtil {

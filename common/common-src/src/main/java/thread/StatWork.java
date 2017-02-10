@@ -4,7 +4,7 @@
 package thread;
 
 /**
- * $Id CouponLinesWorker.java 2015-08-14 13:35 wangguoxing@baidu.com $
+ * $Id CouponLinesWorker.java 2015-08-14 13:35 wangguoxing (554952580@qq.com) $
  * <p/>
  * 用于多线程统计某个券码被使用的数量
  */

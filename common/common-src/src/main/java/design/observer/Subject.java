@@ -6,7 +6,7 @@ package design.observer;
 import java.util.Stack;
 
 /**
- * $Id Subject.java Sep 13,2016 wangguoxing@baidu.com $
+ * $Id Subject.java Sep 13,2016 wangguoxing (554952580@qq.com) $
  */
 public class Subject {
 

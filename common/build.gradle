@@ -89,6 +89,8 @@ subprojects {
 
         compile 'com.esotericsoftware:kryo:3.0.1'
 
+        compile 'com.baidu.noah.naming:naming-sdk-java:1.0.7.7'
+
         testCompile "org.springframework:spring-test:${springVersion}"
         testCompile "org.jmock:jmock-junit4:2.6.0"
         testCompile "junit:junit:4.11"

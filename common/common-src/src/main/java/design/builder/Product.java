@@ -6,7 +6,7 @@ package design.builder;
 import lombok.Data;
 
 /**
- * $Id Product.java Sep 12,2016 wangguoxing@baidu.com $
+ * $Id Product.java Sep 12,2016 wangguoxing (554952580@qq.com) $
  */
 @Data
 public class Product {

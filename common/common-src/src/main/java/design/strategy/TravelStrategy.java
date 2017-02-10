@@ -4,7 +4,7 @@
 package design.strategy;
 
 /**
- * $Id TravelStrategy.java Sep 13,2016 wangguoxing@baidu.com $
+ * $Id TravelStrategy.java Sep 13,2016 wangguoxing (554952580@qq.com) $
  */
 public interface TravelStrategy {
     public void travel();

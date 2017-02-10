@@ -4,7 +4,7 @@
 package aop;
 
 /**
- * $Id UserManagerImpl.java Aug 11,2016 wangguoxing@baidu.com $
+ * $Id UserManagerImpl.java Aug 11,2016 wangguoxing (554952580@qq.com) $
  */
 public class UserManagerImpl implements UserManager {
 

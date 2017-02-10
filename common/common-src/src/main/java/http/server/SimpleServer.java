@@ -14,7 +14,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 /**
- * $Id SimpleServer.java Aug 19,2016 wangguoxing@baidu.com $
+ * $Id SimpleServer.java Aug 19,2016 wangguoxing (554952580@qq.com) $
  */
 public class SimpleServer {
     public static final String WEB_ROOT = "./";
