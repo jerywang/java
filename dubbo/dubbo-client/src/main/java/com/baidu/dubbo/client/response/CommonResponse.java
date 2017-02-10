@@ -6,7 +6,7 @@ package com.baidu.dubbo.client.response;
 import lombok.Data;
 
 /**
- * $Id CommonResponse.java 2016-04-08 14:22 wangguoxing@baidu.com $
+ * $Id CommonResponse.java 2016-04-08 14:22 wangguoxing $
  */
 @Data
 public class CommonResponse {

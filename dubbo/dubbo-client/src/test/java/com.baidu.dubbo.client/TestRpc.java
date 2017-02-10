@@ -15,7 +15,7 @@ import com.baidu.dubbo.server.DemoService;
 import lombok.extern.log4j.Log4j;
 
 /**
- * $Id TestRpc.java Sep 20,2016 wangguoxing@baidu.com $
+ * $Id TestRpc.java Sep 20,2016 wangguoxing $
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:applicationContext-client.xml"})
@@ -26,6 +26,8 @@ public class TestRpc {
 
     @Test
     public void testDemo() {
+        Long startTime = System.currentTimeMillis();
+        log.info("cost: " + (System.currentTimeMillis() - startTime));
         System.out.println(demoService.sayHello("jerry"));
     }
 }

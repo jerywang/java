@@ -16,9 +16,12 @@ import com.baidu.dubbo.client.request.DemoRequest;
 import com.baidu.dubbo.client.response.CommonResponse;
 import com.baidu.dubbo.server.DemoService;
 
+import lombok.extern.log4j.Log4j;
+
 /**
- * $Id DemoController.java 2016-04-07 20:58 wangguoxing@baidu.com $
+ * $Id DemoController.java 2016-04-07 20:58 wangguoxing $
  */
+@Log4j
 @Controller
 @RequestMapping("/demo")
 public class DemoController extends AbstractController {
@@ -30,6 +33,9 @@ public class DemoController extends AbstractController {
     @ResponseBody
     public CommonResponse getUserInfo(@Valid DemoRequest request, BindingResult bindingResult) {
         checkBindingResult(bindingResult);
-        return new CommonResponse(demoService.sayHello(request.getName()));
+        Long startTime = System.currentTimeMillis();
+        String name = demoService.sayHello(request.getName());
+        log.info("name: " + request.getName() + " cost: " + (System.currentTimeMillis() - startTime));
+        return new CommonResponse(name);
     }
 }

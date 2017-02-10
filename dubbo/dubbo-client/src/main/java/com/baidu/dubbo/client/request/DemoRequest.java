@@ -8,7 +8,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 import lombok.Data;
 
 /**
- * $Id DemoRequest.java 2016-04-07 20:59 wangguoxing@baidu.com $
+ * $Id DemoRequest.java 2016-04-07 20:59 wangguoxing $
  */
 @Data
 public class DemoRequest {
