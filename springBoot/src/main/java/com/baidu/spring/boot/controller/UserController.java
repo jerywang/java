@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.baidu.spring.boot.model.User;
 
 /**
- * $Id UserController.java 2016-07-08 17:28 wangguoxing@baidu.com $
+ * $Id UserController.java 2016-07-08 17:28 wangguoxing $
  */
 @RestController
 @RequestMapping("/user")

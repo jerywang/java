@@ -12,7 +12,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * $Id Application.java 2016-07-08 17:32 wangguoxing@baidu.com $
+ * $Id Application.java 2016-07-08 17:32 wangguoxing $
  */
 @Configuration
 @ComponentScan

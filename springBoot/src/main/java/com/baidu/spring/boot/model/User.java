@@ -6,7 +6,7 @@ package com.baidu.spring.boot.model;
 import lombok.Data;
 
 /**
- * $Id User.java 2016-07-08 17:27 wangguoxing@baidu.com $
+ * $Id User.java 2016-07-08 17:27 wangguoxing $
  */
 @Data
 public class User {

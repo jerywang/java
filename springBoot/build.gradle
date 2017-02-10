@@ -25,6 +25,21 @@ jar {
     version =  '0.1.0'
 }
 
+task zip (type: Zip, dependsOn: [jar]) {
+    baseName = 'springBoot'
+    version =  '0.1.0'
+    destinationDir = file('output')
+    into('resource') {
+        from('src/main/resource')
+    }
+
+    into('lib') {
+	from jar.archivePath
+	from configurations.runtime
+    }
+    from 'shell'
+}
+
 repositories {
     maven { url 'http://maven.scm.baidu.com:8081/nexus/content/repositories/Baidu_Local_Snapshots' }
     maven { url 'http://maven.scm.baidu.com:8081/nexus/content/groups/public/' }
@@ -40,3 +55,5 @@ dependencies {
 task wrapper(type: Wrapper) {
     gradleVersion = '2.2.1'
 }
+
+defaultTasks 'clean', 'jar', 'zip'
