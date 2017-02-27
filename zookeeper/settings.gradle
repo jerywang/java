@@ -1,0 +1,6 @@
+rootProject.name = "zookeeper"
+
+include "zk-test"
+include "zk-lock"
+include "zk-configure"
+include "zk-nameservice"
