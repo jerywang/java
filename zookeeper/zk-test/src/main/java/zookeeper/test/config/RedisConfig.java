@@ -13,6 +13,6 @@ import lombok.Data;
 @Data
 @Component
 public class RedisConfig {
-    private String host;
-    private int port;
+    private volatile String host;
+    private volatile int port;
 }

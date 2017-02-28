@@ -1,6 +1,3 @@
-/*
- * Copyright (C) 2017 Baidu, Inc. All Rights Reserved.
- */
 package zookeeper.test;
 
 import java.util.List;
@@ -22,13 +19,13 @@ import org.apache.zookeeper.data.Stat;
  */
 public class TestCreateTmp {
     public static void main(String[] args) throws Exception {
-        final ZooKeeper zooKeeper = new ZooKeeper("127.0.0.1:2181", Constants.ZK_SESSION_TIMEOUT, new Watcher() {
+        final ZooKeeper zooKeeper = new ZooKeeper("127.0.0.1:2181", 3000, new Watcher() {
             public void process(WatchedEvent event) {
                 if (event.getState() == Event.KeeperState.SyncConnected) {
                     System.out.println("connect zookeeper success!");
                 }
             }
-        });;
+        });
         final String data = "123456789";
         // 临时节点 - 不能重复
         ExecutorService executorService = Executors.newFixedThreadPool(10);
