@@ -7,7 +7,6 @@ import java.util.List;
 import com.baidu.noah.naming.BNSClient;
 import com.baidu.noah.naming.BNSInstance;
 
-import util.JsonUtil;
 
 /**
  * $Id TestDemo.java Jan 11,2017 wangguoxing (554952580@qq.com) $
