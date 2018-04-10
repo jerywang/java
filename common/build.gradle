@@ -8,6 +8,7 @@ ext {
     httpclientVersion = "4.3.6"
     log4jVersion = "1.2.17"
     slf4jVersion = "1.7.10"
+    droolsVersion = "5.5.0.Final"
 }
 
 subprojects {
@@ -90,6 +91,15 @@ subprojects {
         compile 'com.esotericsoftware:kryo:3.0.1'
 
         compile 'com.baidu.noah.naming:naming-sdk-java:1.0.7.7'
+
+        compile "org.drools:drools-core:${droolsVersion}"
+        compile "org.drools:drools-compiler:${droolsVersion}"
+        compile "org.drools:drools-clips:${droolsVersion}"
+        compile "org.drools:drools-decisiontables:${droolsVersion}"
+        compile "org.drools:drools-jsr94:${droolsVersion}"
+        compile "org.drools:drools-persistence-jpa:${droolsVersion}"
+        compile "org.drools:drools-templates:${droolsVersion}"
+        compile "org.drools:drools-verifier:${droolsVersion}"
 
         testCompile "org.springframework:spring-test:${springVersion}"
         testCompile "org.jmock:jmock-junit4:2.6.0"
