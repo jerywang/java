@@ -101,6 +101,11 @@ subprojects {
         compile "org.drools:drools-templates:${droolsVersion}"
         compile "org.drools:drools-verifier:${droolsVersion}"
 
+        compile 'org.elasticsearch:elasticsearch:6.2.0'
+        compile 'org.elasticsearch.client:transport:6.2.0'
+        compile 'com.fasterxml.jackson.core:jackson-databind:2.9.5'
+        compile 'org.elasticsearch.client:elasticsearch-rest-client:6.2.2'
+
         testCompile "org.springframework:spring-test:${springVersion}"
         testCompile "org.jmock:jmock-junit4:2.6.0"
         testCompile "junit:junit:4.11"
